@@ -1,0 +1,20 @@
+# STAGE 1: Construcción (Instala dependencias)
+FROM node:lts-slim AS builder
+WORKDIR /app
+# El contexto de construcción es la carpeta 'backend/' (gracias a docker-compose.yml)
+COPY package.json package-lock.json ./
+RUN npm install
+
+# STAGE 2: Producción (Contenedor ligero de ejecución)
+FROM node:lts-slim AS production
+WORKDIR /app
+
+# Copia los módulos y el código de la etapa anterior
+COPY --from=builder /app/node_modules ./node_modules
+COPY . .
+
+# Expone el puerto donde escucha tu API de Node.js (ej: 3000)
+EXPOSE 3000
+
+# Inicia tu servidor
+CMD [ "npm", "start" ]
