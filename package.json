@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "@angular/cli": "~17.0.0" 
-  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
