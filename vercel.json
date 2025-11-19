@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "./server.js",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "installCommand": "npm install" 
