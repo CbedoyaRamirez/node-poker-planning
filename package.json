@@ -4,7 +4,7 @@
   "main": "scripts.js",
   "scripts": {
     "start": "node server.js",
-    "build": "npm run build"
+    "build": "sh -c 'npx ng build --configuration production'"
   },
   "keywords": [],
   "author": "",
