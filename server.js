@@ -10,7 +10,7 @@ const server = http.createServer(app);
 // Configuración de CORS para Socket.IO
 const io = socketIo(server, {
     cors: {
-        origin: "https://dev.d2ettymzxgwzix.amplifyapp.com", // La URL de tu aplicación Angular
+        origin: "https://app-poker-planning.vercel.app", // La URL de tu aplicación Angular
         methods: ["GET", "POST"]
     }
 });
